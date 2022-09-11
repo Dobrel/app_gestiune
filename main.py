@@ -1,5 +1,6 @@
 from tkinter import *
 #global variable
+#global choice
 
 #interfata principala
 app=Tk()
@@ -8,16 +9,23 @@ app.geometry('1000x500')
 
 #interfata adaugare
 def interfata_adaugare():
-    app_aduagare=Tk()
-    app_aduagare.title("Adauga un obiect in gestiune")
-    app_aduagare.geometry("1000x500")
+    app_adaugare=Tk()
+    app_adaugare.title("Adauga un obiect in gestiune")
+    app_adaugare.geometry("1000x500")
 
 #interfata stergere
+def interfata_stergere():
+    app_stergere=Tk()
+    app_stergere.title("Sterge un obiect din gestiune")
+    app_stergere.geometry("1000x500")
 
 #functie de test
 def printeaza(choice):
     choice=variable.get()
-    return choice
+    if choice=='Adauga in gestiune':
+        interfata_adaugare()
+    else:
+        interfata_stergere()
 
 '''def interface():
     adaug_buton=Button(app, text='Adauga obiect', command=printeaza)
@@ -36,7 +44,6 @@ def interface():
     optiuni=["Selecteaza o optiune", "Adauga in gestiune", "Sterge din gestiune"]
     option_menu = OptionMenu(app, variable, *optiuni, command=printeaza)
     option_menu.pack()
-    #select_buton=Button(app,text="Alege",command=printeaza).pack(side=TOP)
 
 def build():
     interface()
